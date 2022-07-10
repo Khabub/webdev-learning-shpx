@@ -1,10 +1,14 @@
-import './App.css';
+import * as S from "./App_styles";
+import MainWindow from "./components/Layout/MainWindow/MainWindow";
+import NavigationPanel from "./components/Layout/NavigationPanel/NavigationPanel";
+
 
 const App = () => {
   return (
-    <div>
-    <h1>TEST APP</h1>
-    </div>
+    <S.Container>
+      <NavigationPanel />
+      <MainWindow />
+    </S.Container>
   );
 }
 
