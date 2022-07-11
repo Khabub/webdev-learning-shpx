@@ -2,18 +2,22 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100vw;
+  height: auto;
   margin-top: 50px;
-  overflow-x: hidden;  
-  height: 400px;
-  position: relative;
+  overflow-x: hidden;
+ 
+  
+
+
 
   img {
-    position: fixed;    
-    border-bottom-left-radius: 50px;
-    transform: translateX(140px) translateY(-180px) scale(0.4);
+      max-width: 100%;
+      height:auto;
+      border-bottom-left-radius: 15%;
+      object-position: 110px;
+      padding: 1rem;
     
-  }
-
+    }
 `;

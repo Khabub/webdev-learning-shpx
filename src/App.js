@@ -8,6 +8,7 @@ const App = () => {
     <S.Container>
       <NavigationPanel />
       <MainWindow />
+      <div>PRODUCTS</div>
     </S.Container>
   );
 }
