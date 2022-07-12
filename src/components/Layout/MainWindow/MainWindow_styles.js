@@ -7,17 +7,33 @@ export const Container = styled.div`
   height: auto;
   margin-top: 50px;
   overflow-x: hidden;
- 
-  
-
-
 
   img {
-      max-width: 100%;
-      height:auto;
-      border-bottom-left-radius: 15%;
-      object-position: 110px;
-      padding: 1rem;
-    
-    }
+    max-width: 100%;
+    height: auto;
+    border-bottom-left-radius: 15%;
+    object-position: 80px;
+    padding: 1rem;
+  }
+`;
+
+export const HeadlineBox = styled.div`
+  width: 55vw;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  padding: 0.5rem 1rem;
+
+  h1 {
+    font-size: 1.4rem;
+    line-height: 0.5rem;
+    max-width: 100%;
+  }
+
+  p {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+  }
 `;

@@ -4,9 +4,13 @@ import * as S from "./MainWindow_styles";
 const MainWindow = () => {
   return (
     <S.Container>
-      
-        <img src={mainImage} alt="main"></img>
-    
+      <S.HeadlineBox>
+        <h1>Modern Interior</h1>
+        <h1>for your</h1>
+        <h1>Dream House</h1>
+        <p>We custom make design to suits your needs.</p>
+      </S.HeadlineBox>
+      <img src={mainImage} alt="main"></img>
     </S.Container>
   );
 };
