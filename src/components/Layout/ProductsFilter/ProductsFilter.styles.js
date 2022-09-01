@@ -5,13 +5,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 
   h1 {
     font-size: 1.3rem;
     margin-left: 2rem;
-  }
+  }  
+`;
 
-  select {
-    margin-right: 2rem;
-  }
+export const Select = styled.div`
+  margin-right: 2rem;
+  height: auto;
 `;
