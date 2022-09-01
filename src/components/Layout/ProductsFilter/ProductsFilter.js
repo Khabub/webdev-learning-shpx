@@ -21,7 +21,7 @@ const ProductsFilter = () => {
     <S.Container>
       <h1>Products</h1>
       <S.Select>
-        <Select options={options} styles={customStyles} readonly/>
+        <Select options={options} styles={customStyles} isSearchable={false}/>
       </S.Select>
     </S.Container>
   );
