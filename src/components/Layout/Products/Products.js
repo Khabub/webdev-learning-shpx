@@ -12,6 +12,7 @@ const list = productsList.map((val) => (
       price={val.price}
       image={val.image}
       type={val.type}
+      positiony={val.positiony}
     ></Card>
   </SwiperSlide>
 ));
@@ -19,8 +20,8 @@ const list = productsList.map((val) => (
 const Products = () => {
   return (
     <Swiper
-      slidesPerView={2}
-      spaceBetween={10}
+      slidesPerView={1}
+      spaceBetween={50}
       centeredSlides={true}
       grabCursor={true}
     >

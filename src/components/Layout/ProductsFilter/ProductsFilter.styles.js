@@ -8,7 +8,7 @@ export const Container = styled.div`
   z-index: 10;
 
   h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 2rem;
   }  
 `;

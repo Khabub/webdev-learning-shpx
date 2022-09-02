@@ -5,6 +5,7 @@ export const productsList = [
     price: 18,
     image: require("../assets/chair_1.png"),
     type: "chair",
+    positiony: "30px",
   },
   {
     id: 1,
