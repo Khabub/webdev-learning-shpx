@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Products.styles.css";
 
-
 const list = productsList.map((val) => (
   <SwiperSlide key={val.id}>
     <Card
@@ -19,20 +18,14 @@ const list = productsList.map((val) => (
 
 const Products = () => {
   return (
-    <>
     <Swiper
       slidesPerView={2}
-      spaceBetween={30}
-      centeredSlides={true}      
-      pagination={{
-        clickable: true,
-      }}
-      
-      
+      spaceBetween={10}
+      centeredSlides={true}
+      grabCursor={true}
     >
       {list}
     </Swiper>
-    </>
   );
 };
 
