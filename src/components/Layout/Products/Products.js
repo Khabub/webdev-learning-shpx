@@ -2,7 +2,9 @@ import Card from "../../UI/Card/Card";
 import { productsList } from "../../../store/product-list";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/navigation";
 import "./Products.styles.css";
+import { Navigation } from "swiper";
 
 // Make list from productsList and then use it in <Swiper>
 const list = productsList.map((val) => (
@@ -27,6 +29,8 @@ const Products = () => {
       spaceBetween={50}
       centeredSlides={true}
       grabCursor={true}
+      navigation={true}
+      modules={[Navigation]}
     >
       {list}
     </Swiper>

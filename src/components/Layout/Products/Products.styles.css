@@ -11,3 +11,11 @@
   justify-content: center;
   align-items: center;
 } */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: brown !important;
+  transform: scale(70%) translateY(-80px);
+
+
+}

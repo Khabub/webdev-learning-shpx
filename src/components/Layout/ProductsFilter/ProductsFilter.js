@@ -26,7 +26,7 @@ const ProductsFilter = () => {
           options={options}
           placeholder={"All"}
           styles={customStyles}
-          isSearchable={false}
+          isSearchable={false}          
         />
       </S.Select>
     </S.Container>
