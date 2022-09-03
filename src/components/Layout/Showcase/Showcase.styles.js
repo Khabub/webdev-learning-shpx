@@ -36,6 +36,7 @@ export const ShowcaseText = styled.div`
     margin-left: 2.5rem;
     font-size: 1.3rem;
     line-height: 2rem;
+    padding-right: 2.5rem;
   }
 `;
 
