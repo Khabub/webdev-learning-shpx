@@ -4,7 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Products.styles.css";
 
+// Make list from productsList and then use it in <Swiper>
 const list = productsList.map((val) => (
+  // Swiper module
   <SwiperSlide key={val.id}>
     <Card
       key={val.id}
@@ -18,6 +20,7 @@ const list = productsList.map((val) => (
 ));
 
 const Products = () => {
+  // Products - swiper
   return (
     <Swiper
       slidesPerView={1}

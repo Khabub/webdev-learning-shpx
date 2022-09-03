@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: rgb(233, 220, 210);  
+  background-color: rgb(233, 220, 210);
   border-bottom-left-radius: 15%;
   height: 270px;
   width: 80vw;
@@ -11,7 +11,7 @@ export const Container = styled.div`
     position: absolute;
     font-size: 1.4rem;
     top: 30px;
-    left: 60px;   
+    left: 60px;
   }
 
   p {
@@ -25,7 +25,7 @@ export const Container = styled.div`
     position: absolute;
     width: 80%;
     height: auto;
-    top: ${props => props.positiony || "80px"};
+    top: ${(props) => props.positiony || "80px"};
     left: 40px;
     transform: scale(70%);
   }

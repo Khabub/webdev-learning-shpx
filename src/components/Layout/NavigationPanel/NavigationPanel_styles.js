@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 50px;
   width: 100vw;
   position: fixed;
-  top: 0;  
+  top: 0;
   color: #555;
   background-color: #fff;
   z-index: 10;
@@ -19,6 +19,4 @@ export const Container = styled.div`
   img {
     margin-right: 1rem;
   }
-
-
 `;

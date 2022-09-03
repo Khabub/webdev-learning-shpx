@@ -1,3 +1,5 @@
+// List of products
+// positiony: set the image to another position through styled components props
 export const productsList = [
   {
     id: 0,

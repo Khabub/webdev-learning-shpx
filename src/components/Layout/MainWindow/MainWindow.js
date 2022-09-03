@@ -2,6 +2,7 @@ import mainImage from "../../../assets/home_image.png";
 import * as S from "./MainWindow_styles";
 
 const MainWindow = () => {
+  // Main window - headline with image
   return (
     <S.Container>
       <S.HeadlineBox>
