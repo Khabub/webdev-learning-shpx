@@ -5,24 +5,36 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./Products.styles.css";
 import { Navigation } from "swiper";
-
-// Make list from productsList and then use it in <Swiper>
-const list = productsList.map((val) => (
-  // Swiper module
-  <SwiperSlide key={val.id}>
-    <Card
-      key={val.id}
-      name={val.name}
-      price={val.price}
-      image={val.image}
-      type={val.type}
-      positiony={val.positiony}
-    ></Card>
-  </SwiperSlide>
-));
+import { useContext } from "react";
+import ProdFilterContext from "../../../store/context";
 
 const Products = () => {
-  // Products - swiper
+  const ctx = useContext(ProdFilterContext);
+
+  // Filter select menu, all or category
+  const filterCheck = (val) => {
+    if (val.type === ctx.state) {
+      return val.type;
+    } else if (ctx.state === "all") {
+      return true;
+    }
+  };
+
+  // Make list from productsList and then use it in <Swiper>
+  const list = productsList.filter(filterCheck).map((val) => (
+    // Swiper module
+    <SwiperSlide key={val.id}>
+      <Card
+        key={val.id}
+        name={val.name}
+        price={val.price}
+        image={val.image}
+        type={val.type}
+        positiony={val.positiony}
+      ></Card>
+    </SwiperSlide>
+  ));
+
   return (
     <Swiper
       slidesPerView={1}
