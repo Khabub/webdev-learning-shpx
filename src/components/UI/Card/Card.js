@@ -1,6 +1,8 @@
 import * as S from "./Card.styles";
 
 const Card = (props) => {
+
+  
   // Template for products list
   return (
     <S.Container positiony={props.positiony}>

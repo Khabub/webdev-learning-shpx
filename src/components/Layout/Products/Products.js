@@ -10,19 +10,20 @@ import ProdFilterContext from "../../../store/context";
 
 const Products = () => {
   const ctx = useContext(ProdFilterContext);
+  
 
   // Filter select menu, all or category
   const filterCheck = (val) => {
-    if (val.type === ctx.state) {
-      return val.type;
-    } else if (ctx.state === "all") {
-      return true;
+    if (ctx.state === "all" || ctx.state === val.type) {
+      
+      return val;
     }
   };
 
   // Make list from productsList and then use it in <Swiper>
   const list = productsList.filter(filterCheck).map((val) => (
     // Swiper module
+    
     <SwiperSlide key={val.id}>
       <Card
         key={val.id}
@@ -35,6 +36,7 @@ const Products = () => {
     </SwiperSlide>
   ));
 
+  
   return (
     <Swiper
       slidesPerView={1}
@@ -43,7 +45,8 @@ const Products = () => {
       grabCursor={true}
       navigation={true}
       modules={[Navigation]}
-    >
+    >     
+    
       {list}
     </Swiper>
   );

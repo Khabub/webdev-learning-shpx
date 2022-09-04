@@ -25,13 +25,13 @@ const ProductsFilter = () => {
   const ctx = useContext(ProdFilterContext);   
   
   const valueHandler = (choice) => {
-    ctx.setValue(choice.value);
+    ctx.setValue(choice.value);    
   } 
 
   return (
     
     <S.Container>
-      <h1>Products</h1>
+      <h1 id="products">Products</h1>
       <S.Select>
         <Select
           options={options}

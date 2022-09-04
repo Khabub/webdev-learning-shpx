@@ -6,7 +6,7 @@ const Showcase = () => {
     <S.Container>
       <span></span>
 
-      <img src={showcaseImage} alt="showcase"></img>
+      <img id="about" src={showcaseImage} alt="showcase"></img>
 
       <S.ShowcaseText>
         <h1>Showcase</h1>

@@ -11,7 +11,7 @@ const MainWindow = () => {
         <h1>Dream House</h1>
         <p>We custom make design to suits your needs.</p>
       </S.HeadlineBox>
-      <img src={mainImage} alt="main"></img>
+      <img id="home" src={mainImage} alt="main"></img>
     </S.Container>
   );
 };
