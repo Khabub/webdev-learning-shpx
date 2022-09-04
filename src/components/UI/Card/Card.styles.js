@@ -28,5 +28,16 @@ export const Container = styled.div`
     top: ${(props) => props.positiony || "80px"};
     left: 40px;
     transform: scale(70%);
+    animation: animProduct 1s ease-in-out;
+  }
+
+  @keyframes animProduct {
+    100% {
+      transform: scale(70%);
+    }
+
+    0% {
+      transform: scale(10%);
+    }
   }
 `;

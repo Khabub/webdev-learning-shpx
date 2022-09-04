@@ -10,16 +10,16 @@ import { ProdFilterProvider } from "./store/context";
 const App = () => {
   // Main window with components
   return (
-    <ProdFilterProvider>
-      <S.Container>
-        <NavigationPanel />
-        <MainWindow />
+    <S.Container>
+      <NavigationPanel />
+      <MainWindow />
+      <ProdFilterProvider>
         <ProductsFilter />
         <Products />
-        <Showcase />
-        <Contact />
-      </S.Container>
-    </ProdFilterProvider>
+      </ProdFilterProvider>
+      <Showcase />
+      <Contact />
+    </S.Container>
   );
 };
 
