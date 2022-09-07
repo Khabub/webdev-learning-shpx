@@ -2,7 +2,6 @@ import { createContext, useState } from "react";
 
 const ProdFilterContext = createContext({
   setValue: () => {},
-
   state: "",
 });
 

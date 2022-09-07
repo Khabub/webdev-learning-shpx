@@ -10,6 +10,7 @@ export const MenuHamList = styled.ul`
     text-decoration: none;
     color: rgb(199, 199, 199);
     padding: 0 1rem;
+    text-shadow: 3px 3px 3px black;
   }
 
   a:hover,

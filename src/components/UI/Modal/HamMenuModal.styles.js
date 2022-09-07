@@ -27,10 +27,12 @@ export const Container = styled.div`
   0% {
     transform: translateX(-100px);
     opacity: 0;
+    border-bottom-left-radius: 0;
   }
   
   100% {
     transform: translateX(0);
+    border-bottom-left-radius: 25px;
   }
 }
 `;
