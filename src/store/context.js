@@ -7,6 +7,7 @@ const ProdFilterContext = createContext({
 
 export const ProdFilterProvider = (props) => {
   const [value, setValue] = useState("all");
+ 
 
   const valueHandler = (val) => {
     setValue(val);

@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useContext } from "react";
 import ProdFilterContext from "../../../store/context";
 
+
 // Contents of Select menu
 const options = [
   { value: "all", label: "All" },
@@ -25,7 +26,7 @@ const ProductsFilter = () => {
   const ctx = useContext(ProdFilterContext);   
   
   const valueHandler = (choice) => {
-    ctx.setValue(choice.value);    
+    ctx.setValue(choice.value);      
   } 
 
   return (

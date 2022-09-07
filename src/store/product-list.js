@@ -28,7 +28,7 @@ export const productsList = [
     name: "Chaise Molle",
     price: 18,
     image: require("../assets/lamp.png"),
-    type: "lamp",
+    type: "lamp",    
   },
   {
     id: 4,
