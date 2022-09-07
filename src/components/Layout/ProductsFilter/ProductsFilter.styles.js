@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 9;
 
   h1 {
     font-size: 1.1rem;
