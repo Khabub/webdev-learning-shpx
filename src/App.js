@@ -5,21 +5,24 @@ import Products from "./components/Layout/Products/Products";
 import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
 import Showcase from "./components/Layout/Showcase/Showcase";
 import Contact from "./components/Layout/Contact/Contact";
-import { ProdFilterProvider } from "./store/context";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
+import ProdFilterContext from "./store/context";
 
 const App = () => {
   // Main window with components
 
   const [toggleMenu, setToggleMenu] = useState(false);
+  const ctx = useContext(ProdFilterContext);
 
   const hamMenu = () => {
     setToggleMenu((prev) => !prev);
+    ctx.toggleModalMenu(true);
   };
 
   const closeMenu = () => {
     setToggleMenu(false);
+    ctx.toggleModalMenu(false);
   };
 
   return (
@@ -27,10 +30,8 @@ const App = () => {
       {toggleMenu && <MenuHam onClose={closeMenu} />}
       <NavigationPanel onShow={hamMenu} />
       <MainWindow />
-      <ProdFilterProvider>
-        <ProductsFilter />
-        <Products />
-      </ProdFilterProvider>
+      <ProductsFilter />
+      <Products />
       <Showcase />
       <Contact />
     </S.Container>

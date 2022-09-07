@@ -3,7 +3,6 @@ import Select from "react-select";
 import { useContext } from "react";
 import ProdFilterContext from "../../../store/context";
 
-
 // Contents of Select menu
 const options = [
   { value: "all", label: "All" },
@@ -23,14 +22,13 @@ const customStyles = {
 
 const ProductsFilter = () => {
   // Filter of products
-  const ctx = useContext(ProdFilterContext);   
-  
+  const ctx = useContext(ProdFilterContext);
+
   const valueHandler = (choice) => {
-    ctx.setValue(choice.value);      
-  } 
+    ctx.setValue(choice.value);
+  };
 
   return (
-    
     <S.Container>
       <h1 id="products">Products</h1>
       <S.Select>
@@ -38,13 +36,11 @@ const ProductsFilter = () => {
           options={options}
           placeholder={"All"}
           styles={customStyles}
-          isSearchable={false}  
-          onChange={valueHandler}        
+          isSearchable={false}
+          onChange={valueHandler}
         />
       </S.Select>
-    
     </S.Container>
-   
   );
 };
 
