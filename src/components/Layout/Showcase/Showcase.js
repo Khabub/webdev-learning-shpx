@@ -1,5 +1,6 @@
 import * as S from "./Showcase.styles";
 import showcaseImage from "../../../assets/showcase_image.png";
+import React from "react";
 
 const Showcase = () => {
   return (

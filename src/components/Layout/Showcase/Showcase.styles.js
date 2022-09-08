@@ -4,8 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   width: 100%;
+  animation: animShowcase 3s ease-in;
+
+  @keyframes animShowcase {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   span {
     position: absolute;
