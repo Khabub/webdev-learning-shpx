@@ -32,14 +32,7 @@ const App = () => {
     ctx.modalMenuVal = true;
   }, [ctx]);
 
-  return (
-    <S.Container>
-      {toggleMenu && <MenuHam onClose={closeMenu} />}
-      <NavigationPanel onShow={hamMenu} />
-      <MainWindow />
-      <ProductsFilter />
-      <Products />
-      {animComponent.map((val) => (
+  const list = animComponent.map((val) => (
         <InView as="div" key={val.id} >
           {({ inView, ref }) => (
             <div ref={ref}>
@@ -47,7 +40,16 @@ const App = () => {
             </div>
           )}
         </InView>
-      ))}
+      ));
+
+  return (
+    <S.Container>
+      {toggleMenu && <MenuHam onClose={closeMenu} />}
+      <NavigationPanel onShow={hamMenu} />
+      <MainWindow />
+      <ProductsFilter />
+      <Products />
+      {list}
       ;
     </S.Container>
   );
