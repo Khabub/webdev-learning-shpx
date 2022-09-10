@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin: 5rem auto;
   background-color: rgb(233, 220, 210);
   border-top-right-radius: 25px;
-  animation: animContact 3s ease-in;
+  animation: animContact 2s ease-in;
 
   h1 {
     padding: 2rem;
@@ -22,7 +22,7 @@ export const Container = styled.div`
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 1;      
     }
   }
   

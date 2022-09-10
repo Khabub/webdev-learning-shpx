@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  animation: animShowcase 3s ease-in;
+  animation: animShowcase 2s ease-in;
 
   @keyframes animShowcase {
     from {
@@ -13,6 +13,7 @@ export const Container = styled.div`
     }
     to {
       opacity: 1;
+      
     }
   }
 

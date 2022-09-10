@@ -4,26 +4,17 @@ import MainWindow from "./components/Layout/MainWindow/MainWindow";
 import NavigationPanel from "./components/Layout/NavigationPanel/NavigationPanel";
 import Products from "./components/Layout/Products/Products";
 import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
-import Showcase from "./components/Layout/Showcase/Showcase";
-import Contact from "./components/Layout/Contact/Contact";
 import { useState, useContext, useEffect } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
-import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
+import { animComponent } from "./store/components-list";
 
 const App = () => {
   // Main window with components
 
   const [toggleMenu, setToggleMenu] = useState(false);
   const ctx = useContext(ProdFilterContext);
-  /* const myRef = useRef(); */
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0,
-  });
-
- 
-/*   const [myElementVisible, setMyElementVisible] = useState(false); */
 
   const hamMenu = () => {
     setToggleMenu((prev) => !prev);
@@ -36,19 +27,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    ctx.modalMenuVal = true;
 
-  }, [ctx]);
-/*   useEffect(() => {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        setMyElementVisible(entry.isIntersecting);
-      });      
-    });
-    observer.observe(myRef.current);
+    // Do not start product animation
     ctx.modalMenuVal = true;
-   
-  }, [myElementVisible, ctx]); */
+  }, [ctx]);
 
   return (
     <S.Container>
@@ -57,10 +39,16 @@ const App = () => {
       <MainWindow />
       <ProductsFilter />
       <Products />
-      <div ref={ref}>{inView && <Showcase />}</div>
-      <Contact />
-      
-   
+      {animComponent.map((val) => (
+        <InView as="div" key={val.id} >
+          {({ inView, ref }) => (
+            <div ref={ref}>
+              {inView && val.component}
+            </div>
+          )}
+        </InView>
+      ))}
+      ;
     </S.Container>
   );
 };
