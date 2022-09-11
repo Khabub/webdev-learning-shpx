@@ -34,9 +34,9 @@ const App = () => {
 */
   const list = animComponent.map((val) => (
         <InView as="div" key={val.id}>
-           {({inView, ref}) => (
+           {({inView, ref, entry}) => (
             <div ref={ref}>
-              {inView && val.component}
+              {entry.isIntersecting && val.component}
             </div>
           )}
         </InView>
