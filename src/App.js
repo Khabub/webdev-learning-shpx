@@ -33,9 +33,9 @@ const App = () => {
   }, [ctx]);
 */
   const list = animComponent.map((val) => (
-        <InView as="div" key={val.id} onChange={(inView, entry) =>
-           (
-            <div>
+        <InView as="div" key={val.id}>
+           {({inView, ref}) => (
+            <div ref={ref}>
               {inView && val.component}
             </div>
           )}>
