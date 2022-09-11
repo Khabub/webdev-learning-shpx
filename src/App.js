@@ -7,7 +7,7 @@ import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
 import { useState, useContext, useEffect, useRef } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
-import { useInView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 import { animComponent } from "./store/components-list";
 import Showcase from "./components/Layout/Showcase/Showcase";
 import Contact from "./components/Layout/Contact/Contact";
@@ -18,7 +18,6 @@ const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const ctx = useContext(ProdFilterContext);
   const [visible, setVisible] = useState(false);
-
 
   /* const { ref, inView, entry } = useInView({ threshold: 0 }); */
 
@@ -33,12 +32,11 @@ const App = () => {
   };
 
   useEffect(() => {
-
     // Do not start product animation
     ctx.modalMenuVal = true;
   }, [ctx]);
 
- /*  const listComp = animComponent.map((val) => (
+  /*  const listComp = animComponent.map((val) => (
     <div key={val.id} ref={ref}>{inView && val.component}</div>
   )); */
 
@@ -49,8 +47,21 @@ const App = () => {
       <MainWindow />
       <ProductsFilter />
       <Products />
-      <Showcase />
-      <Contact />  
+      <InView>
+        {({ inView, ref, entry }) => (
+          <div ref={ref}>
+            {inView && <Showcase />}
+          </div>
+        )}
+      </InView>
+
+      <InView>
+        {({ inView, ref, entry }) => (
+          <div ref={ref}>
+            {inView && <Contact />}
+          </div>
+        )}
+      </InView>
     </S.Container>
   );
 };
