@@ -4,17 +4,24 @@ import MainWindow from "./components/Layout/MainWindow/MainWindow";
 import NavigationPanel from "./components/Layout/NavigationPanel/NavigationPanel";
 import Products from "./components/Layout/Products/Products";
 import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
-import { InView } from "react-intersection-observer";
-import { animComponent } from "./store/components-list";
+import { useInView } from "react-intersection-observer";
+/* import { animComponent } from "./store/components-list"; */
+import Showcase from "./components/Layout/Showcase/Showcase";
+import Contact from "./components/Layout/Contact/Contact";
+
+
 
 const App = () => {
   // Main window with components
 
   const [toggleMenu, setToggleMenu] = useState(false);
   const ctx = useContext(ProdFilterContext);
+  const [visible, setVisible] = useState(false);
+  
+  const { ref, inView, entry} = useInView({threshold: 0});
 
   const hamMenu = () => {
     setToggleMenu((prev) => !prev);
@@ -25,22 +32,15 @@ const App = () => {
     setToggleMenu(false);
     ctx.toggleModalMenu(false);
   };
-/*
+  
   useEffect(() => {
+
 
     // Do not start product animation
     ctx.modalMenuVal = true;
   }, [ctx]);
-*/
-  const list = animComponent.map((val) => (
-        <InView as="div" key={val.id}>
-           {({inView, ref, entry}) => (
-            <div ref={ref}>
-              {inView && val.component}
-            </div>
-          )}
-        </InView>
-      ));
+
+
 
   return (
     <S.Container>
@@ -48,9 +48,12 @@ const App = () => {
       <NavigationPanel onShow={hamMenu} />
       <MainWindow />
       <ProductsFilter />
-      <Products />
-      {list}
-      ;
+      <Products />        
+  
+      <div ref={ref}>{inView && <Showcase />}</div>
+      <Contact />
+     
+   
     </S.Container>
   );
 };
