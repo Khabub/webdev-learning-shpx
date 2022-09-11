@@ -40,7 +40,7 @@ const App = () => {
             </div>
           )}>
         </InView>
-      ));
+      );
 
   return (
     <S.Container>
