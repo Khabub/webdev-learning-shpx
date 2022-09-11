@@ -33,8 +33,10 @@ const App = () => {
     ctx.modalMenuVal = true;
   }, [ctx]);
 
+  // triggerOnce={process.env.NODE_ENV === "production"}>
+  
   const listComp = animComponent.map((val) => (
-    <InView key={val.id} triggerOnce={process.env.NODE_ENV === "production"}>
+    <InView key={val.id}>
       {({ inView, ref, entry }) => (
         <div ref={ref}>{inView && val.component}</div>
       )}

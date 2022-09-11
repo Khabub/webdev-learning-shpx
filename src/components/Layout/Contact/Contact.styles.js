@@ -19,7 +19,7 @@ export const Container = styled.div`
 
   @keyframes animContact {
     from {
-      opacity: 0;
+      opacity: 0.2;
     }
     to {
       opacity: 1;      
