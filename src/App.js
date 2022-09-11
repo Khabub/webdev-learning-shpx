@@ -7,7 +7,7 @@ import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
 import { useState, useContext, useEffect, useRef } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
-import { InView, useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { animComponent } from "./store/components-list";
 import Showcase from "./components/Layout/Showcase/Showcase";
 import Contact from "./components/Layout/Contact/Contact";
