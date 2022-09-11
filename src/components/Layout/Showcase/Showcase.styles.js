@@ -5,17 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 100%;  
-  animation: animShowcase 2s ease-in forwards;
-
-  @keyframes animShowcase {
-    from {
-      opacity: 0.2;
-    }
-    to {
-      opacity: 1;
-      
-    }
-  }
+  
 
   span {
     position: absolute;
