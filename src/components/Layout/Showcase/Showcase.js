@@ -1,11 +1,15 @@
 import * as S from "./Showcase.styles";
 import showcaseImage from "../../../assets/showcase_image.png";
 import React from "react";
-
+import { InView } from "react-intersection-observer";
 
 const Showcase = () => {
   return (    
-        <S.Container>
+    <InView>
+      {({inView, ref, entry}) => (
+        <div ref={ref}>
+          {inView &&
+          <S.Container>
           <span></span>
           <img src={showcaseImage} alt="showcase"></img>
           <S.ShowcaseText>
@@ -34,6 +38,11 @@ const Showcase = () => {
             </S.SVG>
           </S.ShowcaseText>
         </S.Container>
+}
+        </div>
+      )}
+        
+        </InView>
       )  
 };
 
