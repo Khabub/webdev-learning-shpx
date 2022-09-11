@@ -25,13 +25,13 @@ const App = () => {
     setToggleMenu(false);
     ctx.toggleModalMenu(false);
   };
-
+/*
   useEffect(() => {
 
     // Do not start product animation
     ctx.modalMenuVal = true;
   }, [ctx]);
-
+*/
   const list = animComponent.map((val) => (
         <InView as="div" key={val.id} >
           {({ inView, ref }) => (
