@@ -36,7 +36,7 @@ const App = () => {
         <InView as="div" key={val.id}>
            {({inView, ref, entry}) => (
             <div ref={ref}>
-              {entry.isIntersecting && val.component}
+              {inView && val.component}
             </div>
           )}
         </InView>
