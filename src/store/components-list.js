@@ -5,13 +5,13 @@ export const animComponent = [
   {
     id: 0,
     component: <Showcase />,
-    trigger: true,
+   
     
   },
   {
     id: 1,
     component: <Contact />,
-    trigger: true,
+  
   
   },
 ];

@@ -4,11 +4,11 @@ import MainWindow from "./components/Layout/MainWindow/MainWindow";
 import NavigationPanel from "./components/Layout/NavigationPanel/NavigationPanel";
 import Products from "./components/Layout/Products/Products";
 import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
-import { InView } from "react-intersection-observer";
-import { animComponent } from "./store/components-list";
+import Contact from "./components/Layout/Contact/Contact";
+import Showcase from "./components/Layout/Showcase/Showcase";
 
 const App = () => {
   // Main window with components
@@ -28,20 +28,8 @@ const App = () => {
     ctx.toggleModalMenu(false);
   };
 
-  useEffect(() => {
-    // Do not start product animation
-    ctx.modalMenuVal = true;
-  }, [ctx]);
-
+  // Prý může pomoct, ale nefungovalo to
   // triggerOnce={process.env.NODE_ENV === "production"}>
-  
-  const listComp = animComponent.map((val) => (
-    <InView key={val.id}>
-      {({ inView, ref, entry }) => (
-        <div ref={ref}>{inView && val.component}</div>
-      )}
-    </InView>
-  ));
 
   return (
     <S.Container>
@@ -50,7 +38,8 @@ const App = () => {
       <MainWindow />
       <ProductsFilter />
       <Products />
-      {listComp}
+      <Showcase />
+      <Contact />
     </S.Container>
   );
 };
