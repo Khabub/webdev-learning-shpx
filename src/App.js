@@ -38,9 +38,9 @@ const App = () => {
             <div ref={ref}>
               {inView && val.component}
             </div>
-          )}>
+          )}
         </InView>
-      );
+      ));
 
   return (
     <S.Container>
