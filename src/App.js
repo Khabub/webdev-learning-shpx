@@ -4,20 +4,17 @@ import MainWindow from "./components/Layout/MainWindow/MainWindow";
 import NavigationPanel from "./components/Layout/NavigationPanel/NavigationPanel";
 import Products from "./components/Layout/Products/Products";
 import ProductsFilter from "./components/Layout/ProductsFilter/ProductsFilter";
-import { useState, useContext, useEffect, useRef } from "react";
+import { useState, useContext, useEffect } from "react";
 import MenuHam from "./components/Layout/NavigationPanel/MenuHam";
 import ProdFilterContext from "./store/context";
 import { InView } from "react-intersection-observer";
 import { animComponent } from "./store/components-list";
-import Showcase from "./components/Layout/Showcase/Showcase";
-import Contact from "./components/Layout/Contact/Contact";
 
 const App = () => {
   // Main window with components
 
   const [toggleMenu, setToggleMenu] = useState(false);
   const ctx = useContext(ProdFilterContext);
-  const [visible, setVisible] = useState(false);
 
   /* const { ref, inView, entry } = useInView({ threshold: 0 }); */
 
@@ -36,9 +33,13 @@ const App = () => {
     ctx.modalMenuVal = true;
   }, [ctx]);
 
-  /*  const listComp = animComponent.map((val) => (
-    <div key={val.id} ref={ref}>{inView && val.component}</div>
-  )); */
+  const listComp = animComponent.map((val) => (
+    <InView key={val.id} triggerOnce={process.env.NODE_ENV === "production"}>
+      {({ inView, ref, entry }) => (
+        <div ref={ref}>{inView && val.component}</div>
+      )}
+    </InView>
+  ));
 
   return (
     <S.Container>
@@ -47,21 +48,7 @@ const App = () => {
       <MainWindow />
       <ProductsFilter />
       <Products />
-      <InView>
-        {({ inView, ref, entry }) => (
-          <div ref={ref}>
-            {inView && <Showcase />}
-          </div>
-        )}
-      </InView>
-
-      <InView>
-        {({ inView, ref, entry }) => (
-          <div ref={ref}>
-            {inView && <Contact />}
-          </div>
-        )}
-      </InView>
+      {listComp}
     </S.Container>
   );
 };
