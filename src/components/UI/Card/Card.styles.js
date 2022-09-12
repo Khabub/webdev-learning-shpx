@@ -43,7 +43,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
     height: 200px;
     width: 35vw;    
 
@@ -58,7 +58,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 200%;
+      width: 280%;
     }
   }
 `;

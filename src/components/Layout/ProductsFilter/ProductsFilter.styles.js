@@ -12,7 +12,7 @@ export const Container = styled.div`
     margin-left: 2rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
     h1 {
       margin-left: 8rem;
     }
@@ -23,7 +23,7 @@ export const Select = styled.div`
   margin-right: 2rem;
   height: auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
     margin-right: 8rem;
   }
 `;

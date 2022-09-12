@@ -21,7 +21,7 @@ const Products = () => {
   };
 
   const handleWindowSize = useCallback(() => {
-    window.innerWidth >= 768 ? setSlides(3) : setSlides(1);
+    window.innerWidth >= 700 ? setSlides(3) : setSlides(1);
   }, []);
 
   // Make list from productsList and then use it in <Swiper>
@@ -40,7 +40,7 @@ const Products = () => {
   ));
 
   useEffect(() => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 700) {
       setSlides(3);
     } else {
       setSlides(1);

@@ -11,22 +11,21 @@
   transform: scale(70%) translateY(-80px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .swiper {
     width: 85%;
-    height: 250px;
+    height: 300px;
   }
 
   .swiper-button-next,
-.swiper-button-prev {
-  color: brown !important;
-  transform: scale(70%) translateY(-20px);
-}
+  .swiper-button-prev {
+    color: brown !important;
+    transform: scale(70%) translateY(-60px);
+  }
 }
 
 @media (min-width: 850px) {
   .swiper {
-    width: 65%;    
+    width: 65%;
   }
-
 }

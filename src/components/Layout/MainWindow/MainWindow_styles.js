@@ -13,13 +13,15 @@ export const Container = styled.div`
     height: auto;
     border-bottom-left-radius: 15%;
     object-position: 80px;
-    padding: 1rem;
+    padding: 1rem 0;
+
   }
 
-  @media (min-width: 768px) {
-    justify-content: center;
+  @media (min-width: 700px) {
+    justify-content: flex-end;
     img {
-      max-height: 250px;
+      max-height: 370px;
+      
     }
   }
 `;
@@ -44,8 +46,8 @@ export const HeadlineBox = styled.div`
     font-size: 0.7rem;
   }
 
-  @media (min-width: 768px) {
-    width: 25vw;
-    left: 170px;
+  @media (min-width: 700px) {
+    width: 40vw;
+    left: 50px;
   }
 `;

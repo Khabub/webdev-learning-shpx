@@ -21,14 +21,14 @@ export const Container = styled.div`
     height: auto;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
     img {
-      max-width: 40%;
+      max-width: 50%;
     }
 
     span {
-      top: 670px;
-      left: 350px;
+      top: 830px;
+      left: 250px;
       width: 300px;
       height: 50px;
     }
@@ -51,13 +51,13 @@ export const ShowcaseText = styled.div`
     padding-right: 2.5rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
     position: absolute;
-    top: 650px;
+    top: 830px;
     left: 0;
 
     p {
-      width: 400px;
+      width: 250px;
     }
   }
 `;

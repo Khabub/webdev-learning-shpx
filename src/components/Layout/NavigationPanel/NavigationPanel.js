@@ -11,11 +11,11 @@ const NavigationPanel = (props) => {
   const ctx = useContext(ProdFilterContext);
 
   const handleWindowSize = useCallback(() => {
-    window.innerWidth >= 768 ? setIcon(false) : setIcon(true);
+    window.innerWidth >= 700 ? setIcon(false) : setIcon(true);
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 700) {
       setIcon(false);
       ctx.setSlidesValue(3);
     } else {
