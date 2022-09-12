@@ -15,6 +15,13 @@ export const Container = styled.div`
     object-position: 80px;
     padding: 1rem;
   }
+
+  @media (min-width: 768px) {
+    justify-content: center;
+    img {
+      max-height: 250px;
+    }
+  }
 `;
 
 export const HeadlineBox = styled.div`
@@ -35,5 +42,10 @@ export const HeadlineBox = styled.div`
   p {
     margin-top: 1.5rem;
     font-size: 0.7rem;
+  }
+
+  @media (min-width: 768px) {
+    width: 25vw;
+    left: 170px;
   }
 `;

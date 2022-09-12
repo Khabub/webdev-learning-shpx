@@ -1,22 +1,26 @@
 import * as S from "./NavigationPanel_styles";
 import NavLogo from "./NavLogo";
 import NavIcon from "./NavIcon";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useContext } from "react";
 import MenuStandard from "./MenuStandard";
+import ProdFilterContext from "../../../store/context";
 
 const NavigationPanel = (props) => {
   // Navigation panel
   const [icon, setIcon] = useState("noshow");
+  const ctx = useContext(ProdFilterContext);
 
   const handleWindowSize = useCallback(() => {
-    window.innerWidth > 700 ? setIcon(false) : setIcon(true);
+    window.innerWidth >= 768 ? setIcon(false) : setIcon(true);
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth > 700) {
+    if (window.innerWidth >= 768) {
       setIcon(false);
+      ctx.setSlidesValue(3);
     } else {
       setIcon(true);
+      ctx.setSlidesValue(1);
     }
 
     window.addEventListener("resize", handleWindowSize);
@@ -24,7 +28,7 @@ const NavigationPanel = (props) => {
     return () => {
       window.removeEventListener("resize", handleWindowSize);
     };
-  }, [handleWindowSize]);
+  }, [handleWindowSize, ctx]);
 
   return (
     <S.Container>

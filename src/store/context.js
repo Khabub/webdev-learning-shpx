@@ -5,11 +5,13 @@ const ProdFilterContext = createContext({
   state: String,
   toggleModalMenu: () => {},
   modalMenuVal: Boolean,
+  slides: Number,
 });
 
 export const ProdFilterProvider = (props) => {
   const [value, setValue] = useState("all");
   const [toggleVal, setToggleVal] = useState(false);
+  const [slides, setSlides] = useState(1);
 
   const valueHandler = (val) => {
     // Set products - All or one name
@@ -22,11 +24,17 @@ export const ProdFilterProvider = (props) => {
     setToggleVal(val);
   };
 
+  const slidesHandler = (val) => {
+    setSlides(val);
+  };
+
   const prodFilter = {
     setValue: valueHandler,
     state: value,
     toggleModalMenu: toggleHandler,
     modalMenuVal: toggleVal,
+    slides,
+    setSlidesValue: slidesHandler,
   };
 
   return (

@@ -5,11 +5,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./Products.styles.css";
 import { Navigation } from "swiper";
-import { useContext } from "react";
+import { useContext, useEffect, useCallback } from "react";
 import ProdFilterContext from "../../../store/context";
+import { useState } from "react";
 
 const Products = () => {
   const ctx = useContext(ProdFilterContext);
+  const [slides, setSlides] = useState(1);
 
   // Filter select menu, all or category
   const filterCheck = (val) => {
@@ -17,6 +19,10 @@ const Products = () => {
       return val.type;
     }
   };
+
+  const handleWindowSize = useCallback(() => {
+    window.innerWidth >= 768 ? setSlides(3) : setSlides(1);
+  }, []);
 
   // Make list from productsList and then use it in <Swiper>
   const list = productsList.filter(filterCheck).map((val) => (
@@ -33,10 +39,23 @@ const Products = () => {
     </SwiperSlide>
   ));
 
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setSlides(3);
+    } else {
+      setSlides(1);
+    }
+
+    window.addEventListener("resize", handleWindowSize);
+    return () => {
+      window.removeEventListener("resize", handleWindowSize);
+    };
+  }, [handleWindowSize, ctx]);
+
   return (
     <Swiper
-      slidesPerView={1}
-      spaceBetween={50}
+      slidesPerView={slides}
+      spaceBetween={200}
       centeredSlides={true}
       grabCursor={true}
       navigation={true}

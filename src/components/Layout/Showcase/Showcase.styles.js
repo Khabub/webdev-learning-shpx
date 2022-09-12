@@ -4,8 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 100%;  
-  
+  width: 100%;
 
   span {
     position: absolute;
@@ -20,6 +19,19 @@ export const Container = styled.div`
   img {
     max-width: 90%;
     height: auto;
+  }
+
+  @media (min-width: 768px) {
+    img {
+      max-width: 40%;
+    }
+
+    span {
+      top: 670px;
+      left: 350px;
+      width: 300px;
+      height: 50px;
+    }
   }
 `;
 
@@ -38,6 +50,16 @@ export const ShowcaseText = styled.div`
     line-height: 2rem;
     padding-right: 2.5rem;
   }
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 650px;
+    left: 0;
+
+    p {
+      width: 400px;
+    }
+  }
 `;
 
 export const SVG = styled.div`
@@ -47,9 +69,8 @@ export const SVG = styled.div`
 
   button {
     background-color: transparent;
-    border: none;    
+    border: none;
   }
-
 
   svg {
     background-color: black;
