@@ -23,14 +23,15 @@ export const Container = styled.div`
 
   @media (min-width: 700px) {
     img {
-      max-width: 50%;
+      max-width: 30%;
+      object-position: 100%;
     }
 
     span {
-      top: 830px;
-      left: 250px;
+      top: 650px;
+      left: 450px;
       width: 300px;
-      height: 50px;
+      height: 40px;
     }
   }
 `;
@@ -53,11 +54,16 @@ export const ShowcaseText = styled.div`
 
   @media (min-width: 700px) {
     position: absolute;
-    top: 830px;
+    top: 640px;
     left: 0;
 
     p {
-      width: 250px;
+      width: 450px;
+      font-size: 1.1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
     }
   }
 `;

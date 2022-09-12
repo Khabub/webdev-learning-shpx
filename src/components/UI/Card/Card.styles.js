@@ -7,13 +7,11 @@ export const Container = styled.div`
   width: 80vw;
   margin: 0 auto;
 
-
   h1 {
     position: absolute;
     font-size: 1.4rem;
     top: 30px;
     left: 60px;
-
   }
 
   p {
@@ -44,8 +42,8 @@ export const Container = styled.div`
   }
 
   @media (min-width: 700px) {
-    height: 200px;
-    width: 35vw;    
+    height: 180px;
+    width: 35vw;
 
     h1 {
       top: 0;
@@ -58,7 +56,7 @@ export const Container = styled.div`
     }
 
     img {
-      width: 280%;
+      width: 170%;
     }
   }
 `;

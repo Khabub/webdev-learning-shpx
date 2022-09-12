@@ -14,14 +14,13 @@ export const Container = styled.div`
     border-bottom-left-radius: 15%;
     object-position: 80px;
     padding: 1rem 0;
-
   }
 
   @media (min-width: 700px) {
     justify-content: flex-end;
     img {
-      max-height: 370px;
-      
+      max-height: 250px;
+      object-position: 100%;
     }
   }
 `;
@@ -48,6 +47,6 @@ export const HeadlineBox = styled.div`
 
   @media (min-width: 700px) {
     width: 40vw;
-    left: 50px;
+    left: 200px;
   }
 `;
