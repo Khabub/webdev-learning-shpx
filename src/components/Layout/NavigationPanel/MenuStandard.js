@@ -1,9 +1,8 @@
 import * as S from "./MenuStandard.styles";
 
-const MenuStandard = (props) => {
-
+const MenuStandard = () => {
   return (
-    <S.Container onClose={props.onClose}>
+    <S.Container>
       <S.MenuStandardList>
         <li>
           <a href="#home">Home</a>
@@ -17,7 +16,7 @@ const MenuStandard = (props) => {
         <li>
           <a href="#contact">Contact</a>
         </li>
-      </S.MenuStandardList>
+      </S.MenuStandardList>      
     </S.Container>
   );
 };

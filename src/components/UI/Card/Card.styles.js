@@ -59,4 +59,56 @@ export const Container = styled.div`
       width: 170%;
     }
   }
+
+  @media (min-width: 1000px) {
+    height: 240px;
+    width: 25vw;
+
+    img {
+      width: 150%;
+      left: 15px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    img {
+      width: 120%;
+      left: 20px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    height: 250px;
+    width: 15vw;
+
+    img {
+      width: 320%;
+      left: -10px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    img {
+      width: 250%;
+      left: 10px;
+    }
+  }
+  @media (min-width: 1600px) {
+    img {
+      width: 200%;
+      left: 15px;
+    }
+  }
+  @media (min-width: 1800px) {
+    img {
+      width: 150%;
+      left: 20px;
+    }
+  }
+  @media (min-width: 2100px) {
+    img {
+      width: 100%;
+      left: 65px;
+    }
+  }
 `;

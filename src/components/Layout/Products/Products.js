@@ -12,7 +12,7 @@ import { useState } from "react";
 const Products = () => {
   const ctx = useContext(ProdFilterContext);
   const [slides, setSlides] = useState(1);
-
+ 
   // Filter select menu, all or category
   const filterCheck = (val) => {
     if (ctx.state === "all" || ctx.state === val.type) {
@@ -21,7 +21,14 @@ const Products = () => {
   };
 
   const handleWindowSize = useCallback(() => {
-    window.innerWidth >= 700 ? setSlides(3) : setSlides(1);
+    if (window.innerWidth <= 700) {
+      setSlides(1);
+    } else {
+      setSlides(3);
+    }
+    if (window.innerWidth >= 1400) {
+      setSlides(6);
+    }
   }, []);
 
   // Make list from productsList and then use it in <Swiper>
@@ -40,10 +47,13 @@ const Products = () => {
   ));
 
   useEffect(() => {
-    if (window.innerWidth >= 700) {
-      setSlides(3);
-    } else {
+    if (window.innerWidth <= 700) {
       setSlides(1);
+    } else {
+      setSlides(3);
+    }
+    if (window.innerWidth >= 1400) {
+      setSlides(6);
     }
 
     window.addEventListener("resize", handleWindowSize);

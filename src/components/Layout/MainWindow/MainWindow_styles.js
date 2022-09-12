@@ -23,6 +23,19 @@ export const Container = styled.div`
       object-position: 100%;
     }
   }
+
+  @media (min-width: 1000px) {
+    img {
+      max-height: 500px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    justify-content: center;
+    img {
+      max-height: 100%;
+    }
+  }
 `;
 
 export const HeadlineBox = styled.div`
@@ -48,5 +61,40 @@ export const HeadlineBox = styled.div`
   @media (min-width: 700px) {
     width: 40vw;
     left: 200px;
+  }
+
+  @media (min-width: 1000px) {
+    width: 40vw;
+    height: 300px;
+    left: 50px;
+    top: 300px;
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    width: 30vw;
+    height: 300px;
+    padding-top: 5rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+
+    h1 {
+      font-size: 2.8rem;
+      line-height: 0.1rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
   }
 `;

@@ -23,3 +23,28 @@
     transform: scale(70%) translateY(-60px);
   }
 }
+
+@media (min-width: 1000px) {
+  .swiper {
+    height: 380px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: brown !important;
+    transform: scale(100%) translateY(-60px);
+  }
+}
+
+@media (min-width: 1400px) {
+  .swiper {
+    height: 380px;
+    width: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: brown !important;
+    transform: scale(100%) translateY(-60px);
+  }
+}

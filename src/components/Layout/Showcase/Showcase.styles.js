@@ -22,16 +22,42 @@ export const Container = styled.div`
   }
 
   @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: flex-start;
     img {
       max-width: 30%;
-      object-position: 100%;
+      margin-left: 5rem;
     }
 
     span {
-      top: 650px;
-      left: 450px;
+      top: 670px;
+      left: 0;
       width: 300px;
       height: 40px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    img {
+      max-width: 50%;
+    }
+    span {
+      top: 1200px;
+      left: 0;
+      width: 300px;
+      height: 80px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    img {
+      max-width: 100%;
+    }
+    span {
+      top: 1400px;
+      left: 0;
+      width: 300px;
+      height: 80px;
     }
   }
 `;
@@ -53,17 +79,33 @@ export const ShowcaseText = styled.div`
   }
 
   @media (min-width: 700px) {
-    position: absolute;
-    top: 640px;
-    left: 0;
-
+    margin-top: 6rem;
     p {
-      width: 450px;
+      width: 370px;
       font-size: 1.1rem;
     }
 
     h1 {
       font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    margin-left: 5rem;
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 2rem;
+      width: 500px;
     }
   }
 `;

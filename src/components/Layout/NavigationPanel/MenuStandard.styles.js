@@ -12,6 +12,7 @@ export const MenuStandardList = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 1rem;
 
   a {
     color: black;

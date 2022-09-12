@@ -5,6 +5,7 @@ const ProdFilterContext = createContext({
   state: String,
   toggleModalMenu: () => {},
   modalMenuVal: Boolean,
+  setSlidesValue: Function,
   slides: Number,
 });
 
