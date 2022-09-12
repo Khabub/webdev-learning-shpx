@@ -78,8 +78,7 @@ export const ShowcaseText = styled.div`
     padding-right: 2.5rem;
   }
 
-  @media (min-width: 700px) {
-    margin-top: 6rem;
+  @media (min-width: 700px) {    
     p {
       width: 370px;
       font-size: 1.1rem;
@@ -91,6 +90,7 @@ export const ShowcaseText = styled.div`
   }
 
   @media (min-width: 1000px) {
+    margin-top: 6rem;
     h1 {
       font-size: 2.5rem;
     }
